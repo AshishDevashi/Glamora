@@ -1,0 +1,191 @@
+/* Global Styles */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navbar Styles */
+.navbar-brand {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Hero Section */
+.hero-section {
+    background-color: #f8f9fa;
+    padding: 4rem 0;
+}
+
+/* Jewelry Card Styles */
+.jewelry-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.jewelry-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.jewelry-card .card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.jewelry-card .card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.jewelry-card .btn {
+    margin-top: auto;
+}
+
+.jewelry-price {
+    font-weight: 600;
+    color: #198754;
+}
+
+/* Cart Styles */
+.cart-item-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+
+.remove-item-btn {
+    color: #dc3545;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.remove-item-btn:hover {
+    color: #bb2d3b;
+}
+
+/* Checkout Steps */
+.checkout-steps .step {
+    position: relative;
+    color: #6c757d;
+}
+
+.checkout-steps .step.active {
+    color: #0d6efd;
+}
+
+.checkout-steps .step.completed {
+    color: #198754;
+}
+
+.checkout-steps .step-icon {
+    background-color: #f8f9fa;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    border: 2px solid #dee2e6;
+}
+
+.checkout-steps .step.active .step-icon {
+    border-color: #0d6efd;
+}
+
+.checkout-steps .step.completed .step-icon {
+    border-color: #198754;
+    background-color: #198754;
+    color: white;
+}
+
+/* Order History Styles */
+.order-card {
+    transition: background-color 0.2s ease;
+}
+
+.order-card:hover {
+    background-color: #f8f9fa;
+}
+
+.order-item-img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+
+/* Animation for Add to Cart */
+@keyframes addToCart {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.cart-animation {
+    animation: addToCart 0.5s ease;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 2rem 0;
+    }
+    
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .checkout-steps .step-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .checkout-steps .step-icon i {
+        font-size: 1.25rem !important;
+    }
+}
+
+/* Login/Register Form Styles */
+.modal-body form {
+    margin-bottom: 0;
+}
+
+/* Footer Styles */
+footer {
+    margin-top: auto;
+}
+
+footer a {
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+footer a:hover {
+    opacity: 0.8;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+} 
