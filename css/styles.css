@@ -7,45 +7,134 @@ body {
 }
 
 /* Navbar Styles */
+.navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+    transition: background-color 0.3s ease;
+}
+
+.navbar.scrolled {
+    background: rgba(0,0,0,0.9);
+    padding: 1rem 0;
+}
+
 .navbar-brand {
+    font-size: 1.5rem;
     font-weight: 600;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
+}
+
+.navbar-nav .nav-link {
+    color: rgba(255,255,255,0.9) !important;
+    font-weight: 400;
+    padding: 0.5rem 1rem !important;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #fff !important;
 }
 
 /* Hero Section */
 .hero-section {
-    background-color: #f8f9fa;
-    padding: 4rem 0;
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/hero-jewelry.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.hero-content {
+    padding-top: 80px;
+}
+
+.hero-section h1 {
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+.hero-section .lead {
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.hero-section .btn-light {
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    background: white;
+    color: #000;
+    border: none;
+}
+
+.hero-section .btn-light:hover {
+    background: rgba(255,255,255,0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 /* Jewelry Card Styles */
 .jewelry-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 100%;
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .jewelry-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .jewelry-card .card-img-top {
-    height: 200px;
+    height: 250px;
     object-fit: cover;
 }
 
 .jewelry-card .card-body {
-    display: flex;
-    flex-direction: column;
+    padding: 1.5rem;
 }
 
-.jewelry-card .btn {
-    margin-top: auto;
+.jewelry-card .card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.jewelry-card .card-text {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
 }
 
 .jewelry-price {
+    font-size: 1.2rem;
     font-weight: 600;
-    color: #198754;
+    color: #000;
+    margin-bottom: 1rem;
+}
+
+.add-to-cart-btn {
+    background: #000;
+    border: none;
+    padding: 0.8rem;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart-btn:hover {
+    background: #333;
 }
 
 /* Cart Styles */
@@ -135,12 +224,17 @@ body {
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-    .hero-section {
-        padding: 2rem 0;
+    .navbar {
+        background: rgba(0,0,0,0.9);
+        padding: 1rem 0;
     }
     
     .hero-section h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
+    }
+    
+    .hero-section .lead {
+        font-size: 1.1rem;
     }
     
     .checkout-steps .step-icon {
@@ -150,6 +244,24 @@ body {
     
     .checkout-steps .step-icon i {
         font-size: 1.25rem !important;
+    }
+    
+    .explore-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .search-box .form-control {
+        height: 50px;
+        font-size: 1rem;
+    }
+    
+    .search-box .search-btn {
+        height: 40px;
+        width: 40px;
+    }
+    
+    .jewelry-card .card-img-top {
+        height: 200px;
     }
 }
 
@@ -188,4 +300,122 @@ footer a:hover {
 
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
+}
+
+/* Explore Page Styles */
+.explore-header {
+    background: white;
+    padding: 4rem 0 2rem;
+}
+
+.explore-header h1 {
+    color: #000;
+    font-weight: 700;
+    font-size: 3.5rem;
+}
+
+.search-box {
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+.search-box .form-control {
+    height: 60px;
+    border-radius: 30px;
+    padding: 0 60px 0 30px;
+    font-size: 1.1rem;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.search-box .search-btn {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    background: #000;
+    border: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-box .search-btn:hover {
+    background: #333;
+}
+
+/* Filters Section */
+.filters-section {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 25px;
+}
+
+.filters-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.filter-group {
+    margin-bottom: 2rem;
+}
+
+.filter-group:last-child {
+    margin-bottom: 0;
+}
+
+.filter-group h6 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.form-check {
+    margin-bottom: 0.75rem;
+}
+
+.form-check:last-child {
+    margin-bottom: 0;
+}
+
+.form-check-label {
+    color: #666;
+    cursor: pointer;
+}
+
+.price-range {
+    padding: 0.5rem 0;
+}
+
+.price-range span {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.price-range .form-range {
+    margin: 10px 0;
+}
+
+/* Items Count and Sort */
+.items-count {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* Navigation Styles */
+.nav-icon {
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.nav-icon:hover {
+    color: white;
+    opacity: 0.8;
 } 

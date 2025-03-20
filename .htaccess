@@ -1,0 +1,12 @@
+RewriteEngine On
+RewriteBase /
+
+# If the request is for a real directory or file, don't rewrite
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# API routes
+RewriteRule ^api/(.*)$ php/api/index.php [QSA,L]
+
+# Frontend routes
+RewriteRule ^(.*)$ php/public/index.php [QSA,L] 

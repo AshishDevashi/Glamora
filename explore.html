@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Jewelry - Borrowed</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">BORROWED</a>
+            <div class="navbar-nav me-auto">
+                <a class="nav-link" href="explore.html">Explore Jewelry</a>
+            </div>
+            <div class="d-flex">
+                <a href="#" class="nav-icon"><i class="fas fa-user"></i></a>
+                <a href="cart.html" class="nav-icon ms-3"><i class="fas fa-shopping-bag"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="explore-header mt-5">
+        <div class="container">
+            <h1 class="text-center display-2 fw-bold mb-5">Explore Our Collection</h1>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="search-box">
+                        <input type="text" class="form-control" id="search-jewelry" placeholder="Search jewelry...">
+                        <button class="search-btn" type="button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container py-5">
+        <div class="row">
+            <!-- Filters Sidebar -->
+            <div class="col-lg-3">
+                <div class="filters-section">
+                    <h5 class="filters-title">Filters</h5>
+
+                    <!-- Category Filter -->
+                    <div class="filter-group">
+                        <h6>Category</h6>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="necklaces" id="filter-necklaces">
+                            <label class="form-check-label" for="filter-necklaces">Necklaces</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="earrings" id="filter-earrings">
+                            <label class="form-check-label" for="filter-earrings">Earrings</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="bracelets" id="filter-bracelets">
+                            <label class="form-check-label" for="filter-bracelets">Bracelets</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="rings" id="filter-rings">
+                            <label class="form-check-label" for="filter-rings">Rings</label>
+                        </div>
+                    </div>
+
+                    <!-- Price Range Filter -->
+                    <div class="filter-group">
+                        <h6>Price Range</h6>
+                        <div class="price-range">
+                            <span>$0</span>
+                            <input type="range" class="form-range" id="price-range" min="0" max="1000" step="50">
+                            <span>$1000+</span>
+                        </div>
+                    </div>
+
+                    <!-- Material Filter -->
+                    <div class="filter-group">
+                        <h6>Material</h6>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="gold" id="filter-gold">
+                            <label class="form-check-label" for="filter-gold">Gold</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="silver" id="filter-silver">
+                            <label class="form-check-label" for="filter-silver">Silver</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="platinum" id="filter-platinum">
+                            <label class="form-check-label" for="filter-platinum">Platinum</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Jewelry Grid -->
+            <div class="col-lg-9">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <span class="items-count" id="items-count">Showing 12 items</span>
+                    <div class="dropdown">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="sortDropdown"
+                            data-bs-toggle="dropdown">
+                            Sort By
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" data-sort="price-low">Price: Low to High</a></li>
+                            <li><a class="dropdown-item" href="#" data-sort="price-high">Price: High to Low</a></li>
+                            <li><a class="dropdown-item" href="#" data-sort="name">Name: A to Z</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Jewelry Grid Container -->
+                <div class="row g-4" id="jewelry-grid">
+                    <!-- Items will be loaded here via JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>BORROWED</h5>
+                    <p>Luxury jewelry rental for every occasion.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">Home</a></li>
+                        <li><a href="cart.html" class="text-white">Cart</a></li>
+                        <li><a href="orders.html" class="text-white">Order History</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <address class="mb-0">
+                        <p><i class="fas fa-map-marker-alt me-2"></i>123 Jewelry Lane, Sparkle City</p>
+                        <p><i class="fas fa-phone me-2"></i>(555) 123-4567</p>
+                        <p><i class="fas fa-envelope me-2"></i>info@borrowed.com</p>
+                    </address>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 Borrowed. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="js/auth.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/explore.js"></script>
+</body>
+
+</html>
